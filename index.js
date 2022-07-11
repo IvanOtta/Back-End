@@ -17,7 +17,7 @@ class Usuario{
     }
 
     countMascotas(){
-        return this.mascotas.length
+     console.log(`Mascotas: ${this.mascotas.length}`)
     }
 
     addBook(libro, nombre){
@@ -47,7 +47,7 @@ usuario1.getFullNaeme()
 
 usuario1.addMascota('Hamster')
 
-console.log(usuario1.countMascotas())
+usuario1.countMascotas()
 
 usuario1.addBook('Spiderman', 'Stan Lee')
 

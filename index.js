@@ -3,7 +3,8 @@ class Usuario{
         this.nombre = nombre,
         this.apellido = apellido,
         this.mascotas = mascotas,
-        this.libros = libros
+        this.libros = libros;
+        this.titulosLibros = [];
 
     }
 
@@ -24,9 +25,11 @@ class Usuario{
     }
 
     getBooks(){
-        return this.libros.find(title => {
-            console.log(title.titulo)    
-        });
+        for(const libro of this.libros){
+            this.titulosLibros.push(libro.titulo)
+        }
+        console.log(this.titulosLibros)
+
     }
 
     

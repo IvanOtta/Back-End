@@ -24,28 +24,6 @@ class Contenedor {
     return JSON.parse(data);
   }
 
-  // async save(objeto) {
-  //   try {
-  //     let data = await this.getData();
-  //     let contentJSON = JSON.parse(data);
-  //     let arr = [];
-  //     const indice = contentJSON.map((obj) => obj.id).sort();
-  //     objeto.id = indice[indice.length - 1] + 1;
-
-  //     if (!objeto.id) {
-  //       objeto.id = 1;
-  //       arr = [{ id: 1, ...objeto }];
-  //       await fs.promises.writeFile(this.nameOfFile, JSON.stringify(arr));
-  //       return arr[0].id;
-  //     }
-  //     contentJSON.push(objeto);
-
-  //     await fs.promises.writeFile(this.nameOfFile, JSON.stringify(contentJSON));
-  //   } catch (error) {
-  //     console.log("no se pudo guardar");
-  //   }
-  // }
-
   async save(objeto) {
     try {
       let data = await this.getData();

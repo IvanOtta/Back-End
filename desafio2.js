@@ -24,13 +24,36 @@ class Contenedor {
     return JSON.parse(data);
   }
 
+  // async save(objeto) {
+  //   try {
+  //     let data = await this.getData();
+  //     let contentJSON = JSON.parse(data);
+  //     let arr = [];
+  //     const indice = contentJSON.map((obj) => obj.id).sort();
+  //     objeto.id = indice[indice.length - 1] + 1;
+
+  //     if (!objeto.id) {
+  //       objeto.id = 1;
+  //       arr = [{ id: 1, ...objeto }];
+  //       await fs.promises.writeFile(this.nameOfFile, JSON.stringify(arr));
+  //       return arr[0].id;
+  //     }
+  //     contentJSON.push(objeto);
+
+  //     await fs.promises.writeFile(this.nameOfFile, JSON.stringify(contentJSON));
+  //   } catch (error) {
+  //     console.log("no se pudo guardar");
+  //   }
+  // }
+
   async save(objeto) {
     try {
       let data = await this.getData();
       let contentJSON = JSON.parse(data);
       let arr = [];
-      const indice = contentJSON.map((obj) => obj.id).sort();
-      objeto.id = indice[indice.length - 1] + 1;
+      const indice = contentJSON.length + 1;
+      objeto.id = indice;
+
 
       if (!objeto.id) {
         objeto.id = 1;
@@ -40,9 +63,10 @@ class Contenedor {
       }
       contentJSON.push(objeto);
 
+
       await fs.promises.writeFile(this.nameOfFile, JSON.stringify(contentJSON));
     } catch (error) {
-      console.log("no se pudo guardar");
+      console.log('no se pudo guardar');
     }
   }
 
@@ -71,6 +95,20 @@ class Contenedor {
       console.log(error);
     }
   }
+
+
+  async getById(id){
+    try {
+      const data = await fs.promises.readFile(this.nameOfFile, 'utf-8')
+      const dataJSON = JSON.parse(data)
+      const findId = dataJSON.find(el => el.id === id)
+      console.log(findId)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
 }
 
 const objectPers = {
@@ -78,11 +116,17 @@ const objectPers = {
   nombre: "Ivan",
   apellido: "Otta",
 };
+const objectPers2 = {
+  id: 1,
+  nombre: "Roberto",
+  apellido: "Jorge",
+};
 
 const object1 = new Contenedor("file");
 
 object1.getData();
 object1.save(objectPers);
-object1.deleteById(2);
+// object1.deleteById(1);
 // object1.deleteAll()
+object1.getById(3)
 

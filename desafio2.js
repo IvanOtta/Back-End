@@ -116,11 +116,7 @@ const objectPers = {
   nombre: "Ivan",
   apellido: "Otta",
 };
-const objectPers2 = {
-  id: 1,
-  nombre: "Roberto",
-  apellido: "Jorge",
-};
+
 
 const object1 = new Contenedor("file");
 

@@ -93,6 +93,7 @@ const objectPers = {
   id: 1,
   nombre: "Ivan",
   apellido: "Otta",
+  edad: 21
 };
 
 
@@ -104,3 +105,6 @@ object1.save(objectPers);
 // object1.deleteAll()
 object1.getById(3)
 
+module.exports = {
+  Contenedor
+}

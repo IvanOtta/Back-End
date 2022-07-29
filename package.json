@@ -1,5 +1,26 @@
 {
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "name": "e-ecomercebackend",
+  "version": "1.0.0",
+  "main": "desafio1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanOtta/E-ecomerce-Backend.git"
+  },
+  "keywords": [],
+  "author": "Ivan Otta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanOtta/E-ecomerce-Backend/issues"
+  },
+  "homepage": "https://github.com/IvanOtta/E-ecomerce-Backend#readme",
+  "description": "",
   "dependencies": {
-    "moment": "^2.29.4"
+    "express": "^4.18.1"
   }
 }

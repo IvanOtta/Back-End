@@ -104,7 +104,3 @@ object1.save(objectPers);
 // object1.deleteById(1);
 // object1.deleteAll()
 object1.getById(3)
-
-module.exports = {
-  Contenedor
-}

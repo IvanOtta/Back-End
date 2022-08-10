@@ -102,7 +102,7 @@ router.post('/', (req, res) => {
     const products = new Products(productsArg)
     const newProduct = products.addNewProduct(body)
     if(newProduct){
-        res.json({status: "OK", new: newProduct})
+        res.json({status: "OK", ...productsArg, new: newProduct})
     }else{
         res.json({error: 'Error, no se pudo crear nuevo producto'})
     }

@@ -103,6 +103,7 @@ router.post('/', (req, res) => {
     const newProduct = products.addNewProduct(body)
     if(newProduct){
         res.json({status: "OK", ...productsArg, new: newProduct})
+        productsArg = productsArg.push(...newProduct)
     }else{
         res.json({error: 'Error, no se pudo crear nuevo producto'})
     }
@@ -142,3 +143,4 @@ router.delete('/:id', (req, res) => {
     }
     console.log(products.getAll())
 })
+

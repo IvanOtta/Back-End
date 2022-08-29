@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const app = express()
 
-const PORT = process.env.PORT || 8080
+const PORT = proccess.env.PORT || 8080
 
 
 

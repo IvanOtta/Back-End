@@ -72,25 +72,25 @@ router.get('/', (req, res) => {
 //     }
 // })
 
-// router.post('/', (req, res) => {
-//     const {body} = req
+router.post('/', (req, res) => {
+    const {body} = req
 
-//     body.id = 4
+    body.id = 4
 
 
-//     console.log(body)
-//     res.json({success: 'ok', new: body})
-// })
+    console.log(body)
+    res.json({success: 'ok', new: body})
+})
 
-// router.put('/:id', (req, res) => {
-//     const {id} = req.params;
-//     const {body} = req;
+router.put('/:id', (req, res) => {
+    const {id} = req.params;
+    const {body} = req;
     
-//     const productToChange = products.find(x => x.id == id)
-//     productToChange.price = body.price
+    const productToChange = products.find(x => x.id == id)
+    productToChange.price = body.price
 
-//     res.json({success: 'OK', new: productToChange})
-// })
+    res.json({success: 'OK', new: productToChange})
+})
 
 // router.delete('/:id', (req, res) => {
     
